@@ -1,0 +1,82 @@
+<html>  
+    <head>
+        <title>buttons</title>
+        <script>
+            function Factorial() {
+                no = document.getElementById("n").value;
+                var i, no, fact;
+                fact = 1;
+                for (i = 1; i <= no; i++) {
+                    fact = fact * i;
+                }
+                document.getElementById("Output").value = fact;
+            }
+            function Palindrome() {
+                str = document.getElementById("n").value;
+                var i, j, flag;
+                flag = 0;
+                for (i = 0, j = str.length - 1; i < j; i++, j--) {
+                    if (str[i] != str[j]) {
+                        flag = 1;
+                    }
+                }
+                if (flag == 0) {
+                    document.getElementById("Output").value = "Palindrome";
+                } else {
+                    document.getElementById("Output").value = "Not Palindrome";
+                }
+            }
+            function Fibonacci() {
+                no = document.getElementById("n").value;
+                var i, a, b, c;
+                a = 0;
+                b = 1;
+                c = 0;
+                res = "0 "
+                for (i = 2; i <= no; i++) {
+                    c = a + b;
+                    a = b;
+                    b = c;
+                    res += c + " ";
+                }
+                document.getElementById("Output").value = res;
+            }
+            function Prime() {
+                no = document.getElementById("n").value;
+                var i, flag;
+                flag = 0;
+                for (i = 2; i <= no / 2; i++) {
+                    if (no % i == 0) {
+                        flag = 1; break;
+                    }
+                }
+                if (flag == 0) {
+                    document.getElementById("Output").value = "Prime";
+                } else {
+                    document.getElementById("Output").value = "Not Prime";
+                }
+            }
+        </script>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <table border="1" bgcolor="yellow" align="center">
+            <tr>
+                <th> Enter Input</th>
+                <td> <input type="text" id="n"> </td>
+            </tr>
+            <tr>
+                <th>Output</th>
+                <td> <textarea name="Output" rows= "5" cols="25" id="Output"> </textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"> 
+                    <button onclick="Factorial()" class="fact">Factorial</button>
+                    <button onclick="Fibonacci()" class="fib">Fibonacci</button>
+                    <button onclick="Palindrome()" class="pali">Palindrome</button>
+                    <button onclick="Prime()" class="Prime">Prime</button>
+                </td>
+    </body>
+</html>

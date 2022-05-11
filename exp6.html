@@ -1,0 +1,22 @@
+<html>
+
+<head>
+<script>
+    function change(i){
+        if(i==0){
+            document.getElementById("tb").style.backgroundColor = "yellow";
+            document.getElementById("tb").style.color = "blue";
+        }
+        else{
+            document.getElementById("tb").style.backgroundColor = "red";
+            document.getElementById("tb").style.color = "black";
+        }
+    }
+</script>
+</head>
+<body> 
+    <b> Enter you text: </b>
+    <input type = "text" id = "tb" onfocus=change(0) onblur=change(1)> </input>
+
+</body>
+</html>

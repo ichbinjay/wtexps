@@ -42,19 +42,22 @@
                 document.getElementById("Output").value = res;
             }
             function Prime() {
+            
                 no = document.getElementById("n").value;
+                res = "";
+                for(var j = 2; j <= no; j++){
                 var i, flag;
                 flag = 0;
-                for (i = 2; i <= no / 2; i++) {
-                    if (no % i == 0) {
+                for (i = 2; i <= j / 2; i++) {
+                    if (j % i == 0) {
                         flag = 1; break;
                     }
                 }
                 if (flag == 0) {
-                    document.getElementById("Output").value = "Prime";
-                } else {
-                    document.getElementById("Output").value = "Not Prime";
+                    res += j + " ";
                 }
+            }
+            document.getElementById("Output").value += res;
             }
         </script>
         <style>
